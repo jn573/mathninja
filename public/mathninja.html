@@ -4,71 +4,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
-    <style>
-        .sum {
-            width: 50px;
-        }
-
-        .digit {
-            background-color: greenyellow;
-        }
-
-        .answer {
-            background-color: aquamarine;
-        }
-    </style>
+    <link href="css/bulma.min.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
     <title>Welcome to MathNinja</title>
 </head>
 
 <body>
-    <h1 class="display-1">MathNinja</h1>
-    <div class="container-md">
-        <div class="card" style="width: 22rem;">
-            <h4 class="display-4">Questions answered: <span id="answered" class="badge bg-info"></span></h4>
 
-            <div class="card-body">
-                <h5 class="card-title">What is the answer?</h5>
-                <!-- <p class="card-text">What is the answer?</p> -->
-                <form class="form">
-                    <input type="number" name="sum" id="x" value=0 readonly maxlength="5" class="input sum digit">
-                    <input type="number" name="sum" id="y" value=0 readonly maxlength="5" class="input sum digit">
-                    <input type="number" name="sum" id="z" value=0 maxlength="5" class="input sum answer">
-                </form>
-                <br>
-                <a href="#" class="btn btn-primary">Check Answer</a>
+<!--
+    Questions answered: <span id="answered" class="tracker">0</span>
+    <div class="simplebox">
+        <h5 class="display-5">What is the answer?</h5>
+        <form class="form">
+            <input type="number" name="sum" id="x" value=0 readonly maxlength="5" class="sum digit">
+            <input type="number" name="sum" id="y" value=0 readonly maxlength="5" class="sum digit">
+            <input type="number" name="sum" id="result" value=0 maxlength="5" class="sum answer">
+            <br>
+            <a href="#" class="btn btn-primary">Check Answer</a>
+        </form>
+    </div>
+    <div id="anObject"></div>
+-->
+    <div class="tile is-ancestor">
+        <div class="tile is-vertical is-8">
+            <div class="tile is-parent">
+                <article class="tile is-child notification is-danger">
+                    <p class="title">Math Ninja</p>
+                    <p class="subtitle">Practicing sums</p>
+                    <p class="fas fa-heart"></p>
+                    <div class="content">
+                        <!-- Content -->
+                    </div>
+                </article>
+            </div>
+            <div class="tile">
+                <div class="tile is-parent is-vertical">
+                    <article class="tile is-child notification is-primary">
+                        <p class="title">Let's practice <span></span>
+                        <div class="box notification is-info" name="selection" id="plus" onclick="setOperation(this)"><img class="content icon is-small" src="img/plus.svg"></div>
+                        <div class="box" name="selection" id="divide" onclick="setOperation(this)"><img class="content icon is-small" src="img/divide.svg"></div>
+                        <div class="box" name="selection" id="minus" onclick="setOperation(this)"><img class="content icon is-small" src="img/minus.svg"></div>
+                        <div class="box" name="selection" id="multiply" onclick="setOperation(this)""><img class="content icon is-small" src="img/multiply.svg"></div>
+                    </article>
+
+                    <article class="tile is-child notification is-warning">
+                        <p class="title">...tiles</p>
+                        <p class="subtitle">Bottom tile</p>
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child notification is-info">
+                        <p class="title">Middle tile</p>
+                        <p class="subtitle">With an image</p>
+                        <figure class="image is-4by3">
+                            <img src="https://bulma.io/images/placeholders/640x480.png">
+                        </figure>
+                    </article>
+                </div>
             </div>
         </div>
+        <!--<div class="tile is-parent">
+          <article class="tile is-child notification is-success">
+            <div class="content">
+              <p class="title">Tall tile</p>
+              <p class="subtitle">With even more content</p>
+              <div class="content">
+                
+              </div>
+            </div>
+          </article>
+        </div>-->
     </div>
+    <footer>
+        <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
+                href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    </footer>
+    <!-- Scripts below this line -->
+    <script src="js/app.js" defer></script>
+    <script src="js/selector.js" defer></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
 
-    <script src="../js/app.js" defer></script>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
+    <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
 
-<script>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyC_wwTn8tZdT3hFqVlZHnXRVdMqJX6xvA8",
-    authDomain: "mathninja-677a0.firebaseapp.com",
-    projectId: "mathninja-677a0",
-    storageBucket: "mathninja-677a0.appspot.com",
-    messagingSenderId: "589371637692",
-    appId: "1:589371637692:web:ec933288be377ec24775b9",
-    measurementId: "G-PHGE90T542"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>    
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyC_wwTn8tZdT3hFqVlZHnXRVdMqJX6xvA8",
+            authDomain: "mathninja-677a0.firebaseapp.com",
+            projectId: "mathninja-677a0",
+            storageBucket: "mathninja-677a0.appspot.com",
+            messagingSenderId: "589371637692",
+            appId: "1:589371637692:web:ec933288be377ec24775b9",
+            measurementId: "G-PHGE90T542"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
 </body>
 
 </html>
