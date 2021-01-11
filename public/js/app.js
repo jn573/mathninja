@@ -3,7 +3,7 @@ animations: https://animejs.com/
 timezones: https://momentjs.com/
 */
 
-const setClass = "box notification is-info";
+const setClass = "box has-background-info";
 const unsetClass = "box";
 let operator = "plus";
 
@@ -11,7 +11,7 @@ let operator = "plus";
 // i.e. either keep history of current or by id
 function setUnsetOperator(e) {
     const unset = document.getElementById(operator);
-    unset.className = unsetClass;
+    if (unset.id !== null) unset.className = unsetClass;
     operator = e.id;
     e.className = setClass;
 }
