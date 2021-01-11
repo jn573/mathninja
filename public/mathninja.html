@@ -10,21 +10,6 @@
 </head>
 
 <body>
-
-<!--
-    Questions answered: <span id="answered" class="tracker">0</span>
-    <div class="simplebox">
-        <h5 class="display-5">What is the answer?</h5>
-        <form class="form">
-            <input type="number" name="sum" id="x" value=0 readonly maxlength="5" class="sum digit">
-            <input type="number" name="sum" id="y" value=0 readonly maxlength="5" class="sum digit">
-            <input type="number" name="sum" id="result" value=0 maxlength="5" class="sum answer">
-            <br>
-            <a href="#" class="btn btn-primary">Check Answer</a>
-        </form>
-    </div>
-    <div id="anObject"></div>
--->
     <div class="tile is-ancestor">
         <div class="tile is-vertical is-8">
             <div class="tile is-parent">
@@ -41,24 +26,35 @@
                 <div class="tile is-parent is-vertical">
                     <article class="tile is-child notification is-primary">
                         <p class="title">Let's practice <span></span>
-                        <div class="box notification is-info" name="selection" id="plus" onclick="setOperation(this)"><img class="content icon is-small" src="img/plus.svg"></div>
-                        <div class="box" name="selection" id="divide" onclick="setOperation(this)"><img class="content icon is-small" src="img/divide.svg"></div>
-                        <div class="box" name="selection" id="minus" onclick="setOperation(this)"><img class="content icon is-small" src="img/minus.svg"></div>
-                        <div class="box" name="selection" id="multiply" onclick="setOperation(this)""><img class="content icon is-small" src="img/multiply.svg"></div>
+                        <div class="box notification is-info" name="selection" id="plus" onclick="setUnsetOperator(this)">
+                            <img class="content icon is-small" src="img/plus.svg"></div>
+                        <div class="box" name="selection" id="divide" onclick="setUnsetOperator(this)"><img
+                                class="content icon is-small" src="img/divide.svg"></div>
+                        <div class="box" name="selection" id="minus" onclick="setUnsetOperator(this)"><img
+                                class="content icon is-small" src="img/minus.svg"></div>
+                        <div class="box" name="selection" id="multiply" onclick="setUnsetOperator(this)""><img class="
+                            content icon is-small" src="img/multiply.svg"></div>
                     </article>
-
+                <!--
                     <article class="tile is-child notification is-warning">
                         <p class="title">...tiles</p>
                         <p class="subtitle">Bottom tile</p>
                     </article>
+                -->                    
                 </div>
                 <div class="tile is-parent">
                     <article class="tile is-child notification is-info">
-                        <p class="title">Middle tile</p>
-                        <p class="subtitle">With an image</p>
-                        <figure class="image is-4by3">
-                            <img src="https://bulma.io/images/placeholders/640x480.png">
-                        </figure>
+                        <p class="title">What is the answer?</p>
+                        <!-- <p class="subtitle">With an image</p> -->
+                        <form>
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input is-info" type="number" readonly placeholder="0">
+                                    <input class="input is-info" type="number" readonly placeholder="0">
+                                    <input class="input is-primary" type="number" placeholder="?">
+                                </div>
+                            </div>
+                        </form>
                     </article>
                 </div>
             </div>
@@ -81,7 +77,7 @@
     </footer>
     <!-- Scripts below this line -->
     <script src="js/app.js" defer></script>
-    <script src="js/selector.js" defer></script>
+    <script src="js/generator.js" defer></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
 
