@@ -1,3 +1,8 @@
+/* libraries that i want to use
+animations: https://animejs.com/
+timezones: https://momentjs.com/
+*/
+
 const setClass = "box notification is-info";
 const unsetClass = "box";
 let operator = "plus";

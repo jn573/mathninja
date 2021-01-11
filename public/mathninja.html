@@ -24,23 +24,38 @@
             </div>
             <div class="tile">
                 <div class="tile is-parent is-vertical">
-                    <article class="tile is-child notification is-primary">
+                    <article class="tile is-child notification is-primary is-vertical">
                         <p class="title">Let's practice <span></span>
-                        <div class="box notification is-info" name="selection" id="plus" onclick="setUnsetOperator(this)">
-                            <img class="content icon is-small" src="img/plus.svg"></div>
-                        <div class="box" name="selection" id="divide" onclick="setUnsetOperator(this)"><img
-                                class="content icon is-small" src="img/divide.svg"></div>
-                        <div class="box" name="selection" id="minus" onclick="setUnsetOperator(this)"><img
-                                class="content icon is-small" src="img/minus.svg"></div>
-                        <div class="box" name="selection" id="multiply" onclick="setUnsetOperator(this)""><img class="
-                            content icon is-small" src="img/multiply.svg"></div>
+                        <div class="columns is-mobile">
+                            <div class="column">
+                                <div class="box notification is-info" name="selection" id="plus"
+                                    onclick="setUnsetOperator(this)">
+                                    <img class="content icon is-small" src="img/plus.svg">
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="box" name="selection" id="divide" onclick="setUnsetOperator(this)">
+                                    <img class="content icon is-small" src="img/divide.svg">
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="box" name="selection" id="minus" onclick="setUnsetOperator(this)"><img
+                                        class="content icon is-small" src="img/minus.svg"></div>
+                            </div>
+                            <div class="column">
+                                <div class="box" name="selection" id="multiply"
+                                    onclick="setUnsetOperator(this)""><img class=" content icon is-small"
+                                    src="img/multiply.svg"></div>
+                            </div>
+
+                        </div>
                     </article>
-                <!--
+                    <!--
                     <article class="tile is-child notification is-warning">
                         <p class="title">...tiles</p>
                         <p class="subtitle">Bottom tile</p>
                     </article>
-                -->                    
+                -->
                 </div>
                 <div class="tile is-parent">
                     <article class="tile is-child notification is-info">
@@ -49,9 +64,12 @@
                         <form>
                             <div class="field">
                                 <div class="control">
-                                    <input class="input is-info" type="number" readonly placeholder="0">
-                                    <input class="input is-info" type="number" readonly placeholder="0">
-                                    <input class="input is-primary" type="number" placeholder="?">
+                                    <input class="input is-info has-background-link-light" type="number" readonly
+                                        placeholder="0">
+                                    <input class="input is-info has-background-link-light" type="number" readonly
+                                        placeholder="0">
+                                    <input class="input is-primary has-background-primary-light" type="number"
+                                        placeholder="?">
                                 </div>
                             </div>
                         </form>
