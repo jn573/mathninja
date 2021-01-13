@@ -10,93 +10,92 @@
 </head>
 
 <body>
-    <div class="tile is-ancestor">
-        <div class="tile is-vertical is-8">
-            <div class="tile is-parent">
-                <article class="tile is-child notification is-danger">
-                    <p class="title">Math Ninja</p>
-                    <p class="subtitle">Practicing sums</p>
-                    <p class="fas fa-heart"></p>
-                    <div class="content">
-                        <!-- Content -->
-                    </div>
-                </article>
-            </div>
-            <div class="tile">
+    <!-- <p class="fas fa-heart"></p> -->
+    <div class="container">
+        <div class="tile is-ancestor">
+            <div class="tile is-vertical is-8">
+                <div class="tile is-parent">
+                    <article class="tile is-child notification is-danger">
+                        <p class="title">Math Ninja</p>
+                        <p class="subtitle">Practicing sums</p>
+                        <!-- <div class="content">
+                            "content"
+                    </div> -->
+                    </article>
+                </div>
                 <div class="tile is-parent">
                     <article class="tile is-child notification is-primary is-vertical">
-                        <p class="title">Let's practice <span></span>
+                        <p class="title">Let's practice</p>
                         <div class="columns is-mobile is-gaplesse is-centered">
                             <div class="column">
-                                <div class="box" name="selection" id="plus"
-                                    onclick="setUnsetOperator(this)">
-                                    <img class="centered" ce src="img/plus.svg">
+                                <div class="box" name="selection" id="plus" onclick="setUnsetOperator(this)">
+                                    <img class="centered" src="img/plus.png">
                                 </div>
                             </div>
                             <div class="column">
-                                <div class="box" name="selection is-info" id="divide" onclick="setUnsetOperator(this)">
-                                    <img class="centered" src="img/divide.svg">
+                                <div class="box" name="selection" id="divide" onclick="setUnsetOperator(this)">
+                                    <img class="centered" src="img/divide.png">
                                 </div>
                             </div>
                             <div class="column">
-                                <div class="box" name="selection" id="minus" onclick="setUnsetOperator(this)"><img
-                                        class="centered" src="img/minus.svg"></div>
+                                <div class="box" name="selection" id="minus" onclick="setUnsetOperator(this)">
+                                    <img class="centered" src="img/minus.png">
+                                </div>
                             </div>
                             <div class="column">
-                                <div class="box" name="selection" id="multiply"
-                                    onclick="setUnsetOperator(this)""><img class="centered"
-                                    src="img/multiply.svg"></div>
+                                <div class="box" name="selection" id="multiply" onclick="setUnsetOperator(this)">
+                                    <img class="centered" src="img/multiply.png">
+                                </div>
                             </div>
-
                         </div>
                     </article>
-                    <!--
-                    <article class="tile is-child notification is-warning">
-                        <p class="title">...tiles</p>
-                        <p class="subtitle">Bottom tile</p>
-                    </article>
-                -->
                 </div>
                 <div class="tile is-parent">
                     <article class="tile is-child notification is-info">
                         <p class="title">What is the answer?</p>
-                        <!-- <p class="subtitle">With an image</p> -->
                         <form>
-                            <div class="field">
-                                <div class="control">
-                                    <input class="input is-info has-background-link-light" type="number" readonly
-                                        placeholder="0">
-                                    <input class="input is-info has-background-link-light" type="number" readonly
-                                        placeholder="0">
-                                    <input class="input is-primary has-background-primary-light" type="number"
-                                        placeholder="?">
+                            <div class="columns is-mobile is-gaplesse">
+                                <div class="control column">
+                                    <input class="input Disabled is-info has-background-link-light" id="num1"
+                                        type="number" readonly placeholder="0">
+                                </div>
+                                <div class="control column">
+                                    <input class="input Disabled is-info has-background-link-light" id="num2"
+                                        type="number" readonly placeholder="0">
+                                </div>
+                            </div>
+                            <div class="columns is-mobile is-gaplesse">
+                                <div class="control column">
+                                    <input class="input is-success has-text-success" type="number" maxlength="5"
+                                        id="answer" placeholder="?">
                                 </div>
                             </div>
                         </form>
+                        <br>
+                        <button class="button is-light" onclick="checkAnswer()" value="Check Answer">Check</button>
                     </article>
                 </div>
+                        <div class="tile is-parent">
+            <p class="tag is-success" id="correct">Success</p> <!--<span id="history"></span> </p>-->
+            <p id="history"></p>
+            <p><span class="tag is-warning" id="incorrect">Try again</span></p>
+        </div>
             </div>
         </div>
-        <!--<div class="tile is-parent">
-          <article class="tile is-child notification is-success">
-            <div class="content">
-              <p class="title">Tall tile</p>
-              <p class="subtitle">With even more content</p>
-              <div class="content">
-                
-              </div>
-            </div>
-          </article>
-        </div>-->
+
     </div>
-    <div id="answered"></div>
+
+    <!-- <div id="answered"></div> -->
+
     <footer>
         <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
                 href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     </footer>
+
     <!-- Scripts below this line -->
     <script src="js/app.js" defer></script>
     <script src="js/generator.js" defer></script>
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
 
