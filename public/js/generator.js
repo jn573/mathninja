@@ -44,5 +44,6 @@ function getObjSum(obj) {
 
 const getAddInt = (...args) => args.reduce((val, total) => val + total, 0);
 const getMultiplyInt = (...args) => args.reduce((val, total) => val * total, 1);
-const getSubtractInt = (...args) => args.reduce((val, total) => val - total, 0);
+// const getSubtractInt = (...args) => args.reduce((val, total) => val - total, 0);
+const getSubtractInt = (n1,n2) => n1-n2;
 const getDivideInt =  (n1,n2) => n1/n2;  // (...args) => args.reduce((val, total) => val / total, 1);

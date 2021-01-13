@@ -1,3 +1,6 @@
+// !BUGS
+// #1 minus always returns answer is wrong
+
 /* libraries that i want to use
 animations: https://animejs.com/
 timezones: https://momentjs.com/
@@ -127,12 +130,14 @@ function checkAnswer() {
     if (sumObject.answer === sumObject.sum) {
         document.getElementById("correct").style.display = "block";
         document.getElementById("incorrect").style.display = "none";
-        const msg = `${sumObject.num1} ${sumObject.operator} ${sumObject.num2} = ${sumObject.num2}`;
+        const msg = `${sumObject.num1} ${sumObject.operator} ${sumObject.num2} = ${sumObject.answer}`;
         updateField('history', msg);
         initIntObj();
     } else {
         document.getElementById("correct").style.display = "none";
         document.getElementById("incorrect").style.display = "block";
+        const msg = `${sumObject.num1} ${sumObject.operator} ${sumObject.num2} = ${sumObject.answer}`;
+        updateField('history', msg);
     }
 }
 
